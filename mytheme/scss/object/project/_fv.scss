@@ -1,0 +1,198 @@
+@use '../../_global' as gl;
+
+.p-fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: gl.rem(100);
+  @media screen and (max-width: gl.$break-point-sp) {
+    height: 100dvh;
+  }
+  &__bg {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at 35% 30%, #ffffff 0%, #f1f5f9 55%, #e2e8f0 100%);
+    animation: bgMove 14s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+  &__svg {
+    position: absolute;
+    bottom: -6%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+  &__grid {
+    transform-origin: center;
+    animation: gridBreath 10s ease-in-out infinite alternate;
+  }
+  &__line {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawCurve 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    &--light-pulse {
+      stroke-dasharray: 150 1800;
+      stroke-dashoffset: 1950;
+      animation: lightRun 6s ease-in-out infinite 3s;
+    }
+  }
+  &__intersection {
+    opacity: 0;
+    animation: fadeInGroup 0.6s ease-out 2.4s forwards;
+  }
+  &__ripple {
+    transform-origin: 780px 400px;
+    animation: rippleSpread 3s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+    &--delay {
+      animation-delay: 1.5s;
+    }
+  }
+  &__core {
+    transform-origin: 780px 400px;
+    animation: coreGlow 2.5s ease-in-out infinite alternate;
+  }
+  &__content {
+    z-index: 10;
+    pointer-events: auto;
+  }
+  &__title {
+    font-family: "Shippori Mincho", "Yu Mincho", "Cinzel", serif;
+    font-size: gl.rem(48);
+    line-height: gl.$line-height-lg;
+    letter-spacing: 0.12em;
+    position: absolute;
+    top: 26%;
+    right: 8%;
+    left: auto;
+    text-align: right;
+    @media screen and (max-width: gl.$break-point-sp) {
+      font-size: gl.rem(25);
+      top: 24%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin-inline: auto;
+    }
+    &__first-line {
+      margin-right: 0.1em;
+    }
+    &__second-line {
+      display: block;
+      margin-top: 0.2em;
+      background: linear-gradient(180deg, #090a0b 0%, #4b5563 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__btn {
+    position: absolute;
+    bottom: 10%;
+    z-index: 10;
+    display: inline-block;
+    padding: gl.rem(12) gl.rem(38);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(9, 10, 11, 0.2);
+    border-radius: gl.rem(40);
+    font-family: "Montserrat", sans-serif;
+    font-size: gl.rem(16);
+    font-weight: gl.$font-weight-semibold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      background: gl.$color-black;
+      color: gl.$color-white;
+      border-color: gl.$color-black;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    @media screen and (max-width: gl.$break-point-sp) {
+      padding: gl.rem(10) gl.rem(28);
+      font-size: gl.rem(12);
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Keyframes (アニメーション定義)
+// -----------------------------------------------------
+@keyframes bgMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-2%, 1.5%) scale(1.02);
+  }
+  100% {
+    transform: translate(1.5%, -1%) scale(0.99);
+  }
+}
+
+@keyframes gridBreath {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.015);
+    opacity: 1;
+  }
+}
+
+@keyframes drawCurve {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lightRun {
+  0% {
+    stroke-dashoffset: 1950;
+  }
+  100% {
+    stroke-dashoffset: -50;
+  }
+}
+
+@keyframes fadeInGroup {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rippleSpread {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(5.5);
+    opacity: 0;
+  }
+}
+
+@keyframes coreGlow {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

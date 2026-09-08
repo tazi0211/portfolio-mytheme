@@ -1,0 +1,33 @@
+@use '../../_global' as gl;
+
+.p-career {
+  &__list {
+    display: flex;
+     @media screen and (max-width: gl.$break-point-sp) {
+      flex-direction: column;
+     }
+    &__terms {
+      border-bottom: 1px solid gl.$color-light-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: gl.rem(100);
+      letter-spacing: gl.$letter-spacing-xl;
+      @media screen and (max-width: gl.$break-point-sp) {
+        width: 100%;
+        border: none;
+        background: gl.$color-light-gray;
+        align-items: flex-start;
+      }
+    }
+    &__details {
+      border-bottom: 1px solid gl.$color-gray;
+      padding: gl.rem(15);
+      width: calc(100% - gl.rem(100));
+      @media screen and (max-width: gl.$break-point-sp) {
+        width: 100%;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use '../../_global' as gl;
+
+.u-fw {
+  &-light {
+    font-weight: gl.$font-weight-light;
+  }
+  &-normal {
+    font-weight: gl.$font-weight-normal;
+  }
+  &-bold {
+    font-weight: gl.$font-weight-bold;
+  }
+}

@@ -1,0 +1,53 @@
+@use '../../_global' as gl;
+
+.c-heading-en {
+  font-family: gl.$font-en;
+	font-size: gl.rem(24);
+	margin-bottom: gl.rem(12);
+}
+
+.c-heading-sub {
+  font-weight: gl.$font-weight-bold;
+  font-size: gl.rem(14);
+  margin-bottom: gl.rem(8);
+}
+
+.c-heading-bold {
+  font-size: gl.rem(16);
+  font-weight: gl.$font-weight-bold;
+}
+
+.c-heading-en-sub {
+  font-family: gl.$font-en;
+  font-size: gl.rem(18);
+  margin-bottom: gl.rem(12);
+}
+
+$bg-grid-svg: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22 preserveAspectRatio=%22xMidYMid slice%22%3E%3Cg stroke=%22%23000000%22 stroke-opacity=%220.04%22 stroke-width=%221%22%3E%3Cline x1=%220%22 y1=%22150%22 x2=%221200%22 y2=%22150%22 /%3E%3Cline x1=%220%22 y1=%22300%22 x2=%221200%22 y2=%22300%22 /%3E%3Cline x1=%220%22 y1=%22450%22 x2=%221200%22 y2=%22450%22 /%3E%3Cline x1=%22300%22 y1=%220%22 x2=%22300%22 y2=%22600%22 /%3E%3Cline x1=%22600%22 y1=%220%22 x2=%22600%22 y2=%22600%22 /%3E%3Cline x1=%22900%22 y1=%220%22 x2=%22900%22 y2=%22600%22 /%3E%3C/g%3E%3C/svg%3E");
+
+.c-heading-page-top {
+  position: relative;
+  margin: 0 calc(((100vw - 100%) / 2) * -1) gl.rem(60) calc(((100vw - 100%) / 2) * -1);
+  padding: gl.rem(110) 0 gl.rem(60);
+  background-color: gl.$color-pale-blue;
+  background-image: 
+    $bg-grid-svg,
+    radial-gradient(circle at 35% 30%, gl.$color-white 0%, #f1f5f9 55%, #e2e8f0 100%);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: gl.$font-en;
+  font-size: gl.rem(40);
+  text-align: center;
+  font-weight: gl.$font-weight-normal;
+  @media screen and (max-width: gl.$break-point-sp) {
+    padding: gl.rem(100) 0 gl.rem(50);
+    font-size: gl.rem(32);
+  }
+  &__ja {
+    display: block;
+    font-size: gl.rem(16);
+    color: gl.$color-dark-gray;
+    margin-top: gl.rem(8);
+  }
+}

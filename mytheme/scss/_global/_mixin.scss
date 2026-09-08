@@ -1,0 +1,45 @@
+@use '_variables' as var;
+
+// -----------------------------------------------------
+// break-points
+// -----------------------------------------------------
+// 0.0625em = 1px
+// ~1023
+@mixin mobile {
+  @media only screen and (max-width: #{var.$break-point-pc - 0.0625em}) {
+    @content;
+  }
+}
+
+// 1025~
+@mixin pc {
+  @media all and (min-width: var.$break-point-pc) {
+    @content;
+  }
+  @media print {
+    @content;
+  }
+}
+// 1024~1200
+@mixin small-pc {
+  @media all and (max-width: #{var.$break-point-large-pc - 0.0625em}) and (min-width: #{var.$break-point-pc}) {
+    @content;
+  }
+  @media print {
+    @content;
+  }
+}
+// 768~1024
+@mixin tablet {
+  @media only screen and (min-width: var.$break-point-tablet) and (max-width: var.$break-point-pc) { 
+    @content;
+  }
+}
+
+// -----------------------------------------------------
+// font-size
+// -----------------------------------------------------
+@mixin size($w, $h: $w) {
+width: $w;
+height: $h;
+}

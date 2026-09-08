@@ -1,0 +1,116 @@
+@use '../_global' as gl;
+
+.l-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: gl.rem(20) gl.rem(40);
+  position: relative;
+  background: gl.$color-white;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  @media screen and (max-width: gl.$break-point-sp) {
+    padding: gl.rem(20);
+  }
+  &__left {
+    font-family: gl.$font-en;
+    font-size: gl.rem(24);
+  }
+  &__right {
+     display: flex;
+      align-items: center;
+    &__nav {
+      @media screen and (max-width: gl.$break-point-sp) {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: gl.$color-white;
+        transition: ease .4s;
+        transform: translateX(100%);
+        z-index: 1000;
+        &.is-active {
+          transform: translateX(0);
+        }
+      }
+    }
+    &__nav-list {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: gl.rem(24);
+      width: 100%;
+      display: flex;
+      text-align: center;
+      font-size: gl.rem(20);
+      margin-bottom: 0;
+      @media screen and (max-width: gl.$break-point-sp) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        height: 100vh;
+        height: 100dvh;
+      }
+      &__item {
+        @media screen and (max-width: gl.$break-point-sp) {
+          width: 85%;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+      &__item-link {
+        @media screen and (max-width: gl.$break-point-sp) {
+          display: block;
+          padding: gl.rem(16) 0;
+        }
+      }
+    }
+    &__hamburger {
+      display: none;
+      @media screen and (max-width: gl.$break-point-sp) {
+        width: gl.rem(40);
+        display: block;
+        border-color: transparent;
+        z-index: 99999999;
+        background: transparent;
+        cursor: pointer;
+        span {
+          width: 100%;
+          height: 1px;
+          background-color: gl.$color-black;
+          position: relative;
+          transition: ease 0.4s;
+          display: block;
+          &:nth-child(1) {
+            top: 0;
+          }
+          &:nth-child(2) {
+            margin: gl.rem(10) 0;
+          }
+          &:nth-child(3) {
+            top: 0;
+          }
+        }
+        &.is-active {
+          span {
+            &:nth-child(1) {
+              top: gl.rem(9);
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              top: gl.rem(-13);
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

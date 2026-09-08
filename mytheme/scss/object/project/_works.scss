@@ -1,0 +1,120 @@
+@use '../../_global' as gl;
+
+.p-works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: gl.rem(20) 2%;
+  &__item {
+    width: 23.5%;
+    @media screen and (max-width: gl.$break-point-sp) {
+      width: 49%;
+    }
+    &__img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+    }
+    &__textwrap {
+      display: flex;
+      flex-direction: column;
+      margin-top: gl.rem(6);
+      align-items: center;
+      &__bottom {
+        font-size: gl.rem(11);
+      }
+    }
+    &__text {
+      margin-top: gl.rem(10);
+      text-align: center;
+    }
+  }
+  &__modal {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s ease, visibility .3s ease;
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, .8);
+    }
+    &__content {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: gl.rem(1000);
+      max-height: 90dvh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__close {
+        position: fixed;
+        top: gl.rem(20);
+        right: gl.rem(20);
+        top: max(#{gl.rem(20)}, env(safe-area-inset-top));
+        right: max(#{gl.rem(20)}, env(safe-area-inset-right));
+        z-index: 10;
+        width: gl.rem(50);
+        height: gl.rem(50);
+        color: #fff;
+        font-size: gl.rem(50);
+        line-height: 1;
+        cursor: pointer;
+        @media screen and (max-width: gl.$break-point-sp) {
+          width: gl.rem(40);
+          height: gl.rem(40);
+          font-size: gl.rem(40);
+        }
+      }
+      &__img {
+        display: block;
+        width: auto;
+        max-width: 90vw;
+        max-height: 80dvh;
+        margin-inline: auto;
+        object-fit: contain;
+        cursor: zoom-in;
+        user-select: none;
+        -webkit-user-drag: none;
+        transform: translate(0, 0) scale(1);
+        transition: transform .3s ease;
+        touch-action: none;
+        &.zoom {
+          cursor: grab;
+        }
+        &.dragging {
+          cursor: grabbing;
+        }
+      }
+    }
+  }
+}
+
+.p-works-banner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: gl.rem(10);
+  gap: gl.rem(20) 2%;
+  &__item {
+    width: 23.5%;
+    @media screen and (max-width: gl.$break-point-sp) {
+      width: 49%;
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

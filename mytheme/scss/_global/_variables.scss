@@ -1,0 +1,59 @@
+// -----------------------------------------------------
+// color
+// -----------------------------------------------------
+$color-white: #fff;
+$color-black: #222;
+$color-gray: #ccc;
+$color-light-gray: #f5f5f5;
+$color-dark-gray: #828282;
+$color-light-blue: #a1b8d1;
+$color-pale-blue: #f8fafc;
+// -----------------------------------------------------
+// font-family
+// -----------------------------------------------------
+$font-jp: "Noto Sans JP", sans-serif;
+$font-en: 'Fjalla One', sans-serif;
+
+// -----------------------------------------------------
+// font-weight
+// -----------------------------------------------------
+$font-weight-bold: 700;
+$font-weight-semibold: 600; 
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// -----------------------------------------------------
+// Line-height
+// -----------------------------------------------------
+$line-height-xl: 2.5;
+$line-height-lg: 1.8;
+$line-height-md: 1.5;
+$line-height-xs: 1.2; 
+$line-height-xxs: 1;
+
+// -----------------------------------------------------
+//letter-spacing
+// -----------------------------------------------------
+$letter-spacing-xl: 0.2em;
+$letter-spacing-lg: 0.1em;
+$letter-spacing-md: 0.05em;
+$letter-spacing-sm: 0.01em;
+$letter-spacing-xs: 0;
+
+// -----------------------------------------------------
+// margin
+// -----------------------------------------------------
+$count: 25;
+
+// // $break-point-tablet: 768px;
+$break-point-tablet: 48em; // 768 0.0625 (font-size: 16px)
+
+// // $break-point-pc: 1024px;
+$break-point-pc: 64em; // 1024 * 0.0625 (font-size: 16px)
+
+// // $break-point-large-pc: 1200px;
+$break-point-large-pc: 75em; // 1200 * 0.0625 (font-size: 16px)
+
+$break-point-sp: 767px;
+$break-point-tablet: 1023px;

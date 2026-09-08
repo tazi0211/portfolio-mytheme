@@ -1,0 +1,59 @@
+@use '../_global' as gl;
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: gl.$font-jp;
+  font-weight: gl.$font-weight-medium;
+  line-height: gl.$line-height-md;
+  color: gl.$color-black;
+  letter-spacing: gl.$letter-spacing-xs;
+  font-size: gl.rem(14);
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:focus-visible {
+    transition: 0s;
+    outline: 2px solid gl.$color-black;
+  }
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+[tabindex] {
+  &:focus-visible {
+    transition: 0s;
+    outline: 2px solid gl.$color-black;
+  }
+}

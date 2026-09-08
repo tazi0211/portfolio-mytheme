@@ -1,0 +1,45 @@
+@use '../../_global' as gl;
+
+.u-m {
+  @for $i from 0 through gl.$count {
+    &t-#{$i * 4} {
+      margin-top: gl.rem(floor(($i * 4) * 1));
+    }
+    &b-#{$i * 4} {
+      margin-bottom: gl.rem(floor(($i * 4) * 1));
+    }
+  }
+  @for $i from 0 through gl.$count {
+    @include gl.pc {
+      &t-pc-#{$i * 4} {
+        margin-top: gl.rem(floor(($i * 4) * 1));
+      }
+      &b-pc-#{$i * 4} {
+        margin-bottom: gl.rem(floor(($i * 4) * 1));
+      }
+    }
+  }
+  @for $i from 0 through gl.$count {
+    @include gl.mobile {
+      &t-sp-#{$i * 4} {
+        margin-top: gl.rem(floor(($i * 4) * 1));;
+      }
+      &b-sp-#{$i * 4} {
+        margin-bottom: gl.rem(floor(($i * 4) * 1));
+      }
+    }
+  }
+  &-center {
+    margin-inline: auto;
+    &-pc {
+      @include gl.pc {
+        margin-inline: auto;
+      }
+    }
+    &-sp {
+      @include gl.mobile {
+        margin-inline: auto;
+      }
+    }
+  }
+}

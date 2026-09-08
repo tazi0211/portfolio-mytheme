@@ -1,0 +1,7 @@
+@use '../_global' as gl;
+
+.l-contents-in {
+	max-width: gl.rem(1200);
+  margin: 0 auto gl.rem(100);
+  padding: 0 gl.rem(20);
+}

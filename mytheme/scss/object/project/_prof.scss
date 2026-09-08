@@ -1,0 +1,49 @@
+@use '../../_global' as gl;
+
+.p-prof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  scroll-margin-top: gl.rem(76);
+  @media screen and (max-width: gl.$break-point-sp) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__left {
+    width: gl.rem(220);
+    @media screen and (max-width: gl.$break-point-sp) {
+      margin-bottom: gl.rem(30);
+    }
+    &__textwrap {
+      text-align: center;
+      margin-top: gl.rem(8);
+      text-align: left;
+      display: inline-block;
+      width: 100%;
+      &__name {
+        font-size: gl.rem(19);
+      }
+      &__job {
+        display: block;
+        font-size: gl.rem(14);
+      }
+    }
+  }
+  &__right {
+    width: calc(100% - gl.rem(270));
+    @media screen and (max-width: gl.$break-point-sp) {
+      width: 100%;
+    }
+    &__text {
+      line-height: gl.$line-height-xl;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: gl.rem(8);
+      margin-bottom: gl.rem(10);
+    }
+  }
+}

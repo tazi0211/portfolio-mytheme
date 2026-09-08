@@ -1,0 +1,26 @@
+@use '../_global' as gl;
+
+.l-footer {
+  font-size: gl.rem(16);
+  border-top: 1px solid gl.$color-black;
+  padding: gl.rem(60) 0;
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: gl.rem(200);
+    align-items: center;
+    margin-inline: auto;
+    &__item {
+      flex-grow: 1;
+      &__link {
+        display: block;
+	      text-align: center;
+      }
+    }
+  }
+  &__copyright {
+    display: block;
+    text-align: center;
+    margin-top: gl.rem(30);
+  }
+}

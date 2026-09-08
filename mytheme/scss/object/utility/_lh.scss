@@ -1,0 +1,19 @@
+@use '../../_global' as gl;
+
+.u-lh {
+  &-xl {
+    line-height: gl.$line-height-xl;
+  }
+  &-lg {
+    line-height: gl.$line-height-lg;
+  }
+  &-md {
+    line-height: gl.$line-height-md;
+  }
+  &-xs {
+    line-height: gl.$line-height-xs;
+  }
+  &-xxs {
+    line-height: gl.$line-height-xxs;
+  }
+}
